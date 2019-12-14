@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-  actions :all, except: [ :new, :edit ]
+  actions :all, except: [ :new ]
 
   index do
     selectable_column

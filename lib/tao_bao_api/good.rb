@@ -104,6 +104,8 @@ module TaoBaoApi
 
       time = rand(1000..9999)
       # url
+      url = "https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=12574478&t=#{time}&api=mtop.taobao.detail.getdetail&v=6.0&dataType=jsonp&ttid=2017%40taobao_h5_6.6.0&AntiCreep=true&type=jsonp&data=%7B%22itemNumId%22%3A%22#{id}%22%7D"
+
       {:url => url,:id => id}
     end
 
