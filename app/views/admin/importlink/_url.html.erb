@@ -1,0 +1,7 @@
+<%= form_tag admin_import_link_path do%>
+  <div>
+    <%= label_tag :links, "批量传入链接" %>
+  </div>
+  <%= text_area_tag :links, nil, cols: 30, rows: 20 %>
+  <%= submit_tag "提交"%>
+<% end %>
