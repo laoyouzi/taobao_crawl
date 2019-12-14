@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2019_12_14_132002) do
 
-  create_table "active_admin_comments", force: :cascade do |t|
+  create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -26,21 +26,21 @@ ActiveRecord::Schema.define(version: 2019_12_14_132002) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "active_admin_managed_resources", force: :cascade do |t|
+  create_table "active_admin_managed_resources", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "class_name", null: false
     t.string "action", null: false
     t.string "name"
     t.index ["class_name", "action", "name"], name: "active_admin_managed_resources_index", unique: true
   end
 
-  create_table "active_admin_permissions", force: :cascade do |t|
+  create_table "active_admin_permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "managed_resource_id", null: false
     t.integer "role", limit: 1, default: 0, null: false
     t.integer "state", limit: 1, default: 0, null: false
     t.index ["managed_resource_id", "role"], name: "active_admin_permissions_index", unique: true
   end
 
-  create_table "admin_users", force: :cascade do |t|
+  create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_132002) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "spu"
     t.string "url"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_132002) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "variants", force: :cascade do |t|
+  create_table "variants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
     t.string "sku"
     t.integer "quantity", default: 0, null: false
