@@ -2,4 +2,3 @@
 taobao_api_job:
   cron: "*/30 * * * *"
   class: "TaobaoApiJob"
-  queue: "taobao"

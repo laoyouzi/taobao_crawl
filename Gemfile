@@ -66,7 +66,9 @@ gem 'sidekiq'
 gem "sidekiq-cron", "~> 1.1"
 gem "faraday"
 gem 'nokogiri'
-#gem 'active_admin_role'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'active_admin_role'
 
 
 
