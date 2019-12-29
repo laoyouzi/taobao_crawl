@@ -10,3 +10,7 @@ zh-CN:
     scopes:
       instock: "有库存"
       unstock: "无库存"
+      pending: "待处理"
+      processed: "已处理"
+      unstock_with_pending: "无库存待处理"
+      instock_with_pending: "有库存待上架处理"

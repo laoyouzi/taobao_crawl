@@ -12,8 +12,9 @@ module TaobaoCrawl
     config.load_defaults 5.2
     config.active_job.queue_adapter = :sidekiq
 
-    config.autoload_paths += %W(#{config.root}/lib/)
-    config.autoload_paths += %W(#{config.root}/lib/tao_bao_api/)
+    #config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join("lib")
+    #config.autoload_paths += %W(#{config.root}/lib)
     config.time_zone = 'Beijing'
     config.i18n.default_locale = :'zh-CN'
     config.i18n.available_locales = [:'zh-CN', :en]

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
     resource :import_link, only: [:create]
   end
+  root to: 'admin/products#index'
 end
